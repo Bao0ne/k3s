@@ -111,9 +111,9 @@ enable_keychain = true
 {{end}}
 
 {{range $k, $v := .ExtraRuntimes}}
-[plugins."io.containerd.grpc.v1.cri".containerd.runtimes."{{$k}}"]
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.{{$k}}]
   runtime_type = "{{$v.RuntimeType}}"
-[plugins."io.containerd.grpc.v1.cri".containerd.runtimes."{{$k}}".options]
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.{{$k}}.options]
   BinaryName = "{{$v.BinaryName}}"
   SystemdCgroup = {{ $.SystemdCgroup }}
 {{end}}
